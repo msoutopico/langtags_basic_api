@@ -1,4 +1,4 @@
-# Language tags (basic|proto-) API
+# Language tags basic API
 
 You can fetch the whole list of langtag records as a JSON object. For that, you can send a GET request to the url [https://capps.capstan.be/langtags_json.php](https://capps.capstan.be/langtags_json.php). 
 

@@ -78,7 +78,7 @@ Or you can get a specific langtag record/object with:
 curl -X GET https://capps.capstan.be/langtags_json.php | jq 'map(select(.cApStAn | contains("fra-BEL")))'
 ```
 
-Or you could convert a language code from one convention into another. For example, given locale `fr-BE` (OmegaT code), you can get the corresponding cApStAn code with the following oneliner:
+Or you could convert a language code from one convention into another. For example, given an OmegaT code, you can get the corresponding cApStAn code with the following oneliner:
 
 ```
 locale="fr-BE"

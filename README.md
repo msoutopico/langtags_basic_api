@@ -72,8 +72,16 @@ Here come just a couple of examples (courtesy of Mr. Mathot -) You can get the w
 curl -X GET https://capps.capstan.be/langtags_json.php | jq
 ```
 
-Or you can get a specific langtag record with:
+Or you can get a specific langtag record/object with:
 
 ```
 curl -X GET https://capps.capstan.be/langtags_json.php | jq 'map(select(.cApStAn | contains("fra-BEL")))'
+```
+
+Or you could convert a language code from one convention into another. For example, given locale `fr-BE` (OmegaT code), you can get the corresponding cApStAn code with the following oneliner:
+
+```
+locale="fr-BE"
+curl -s -X GET https://capps.capstan.be/langtags_json.php | jq '.[] | select(.["OmegaT"] | contains ("'$locale'")) | .cApStAn' | sed 's/"//g'
+# outputs fra-BEL
 ```
